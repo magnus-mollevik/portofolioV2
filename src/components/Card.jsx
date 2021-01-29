@@ -28,7 +28,7 @@ const Card = ({title, subTitle, content}) => {
                 <h2>{title}</h2>
                 <h3>{subTitle}</h3>
                 <p>{content}</p>
-                <a href="#">Read More</a>
+                <a href="http://localhost:3000/Landing">Read More</a>
             </div>
         </Tilt>
     )

@@ -5,12 +5,12 @@
 }
 
 body {
-  display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   background: #0a1725;
+  z-index: -2;
 }
+
 body::before {
   content: "";
   position: absolute;
@@ -20,6 +20,11 @@ body::before {
   height: 100%;
   background: linear-gradient(rgb(201, 0, 201), rgb(59, 168, 252));
   clip-path: circle(30% at right 70%);
+  z-index: -1;
+}
+
+.App {
+  height: 100%;
 }
 
 body::after {
@@ -31,16 +36,76 @@ body::after {
   height: 100%;
   background: linear-gradient(rgb(19, 108, 177), #f0f);
   clip-path: circle(30% at 10% 20%);
+  z-index: -1;
 }
 
-.App {
+.navBar {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 1200px;
   flex-wrap: wrap;
   z-index: 1;
+  top: 0;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 3px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(7px);
+  border-radius: 0px 0px 30px 30px;
+}
+
+.navBar > ul {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+  flex-direction: row-reverse;
+  flex-grow: inherit;
+}
+
+.navBar > ul > li > a {
+  color: #fff;
+  margin: 15px;
+  font-size: 1em;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.navBar > ul > li > .active {
+  color: rgb(37, 161, 255);
+}
+
+.Landing {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 1;
+  left: 0;
+  right: 0;
+}
+
+.Technologies {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  left: 0;
+  right: 0;
+}
+
+.container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .card {
@@ -48,10 +113,10 @@ body::after {
   margin: 30px !important;
   width: 280px !important;
   height: 400px !important;
-  padding:0 !important;
+  padding: 0 !important;
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5) !important;
   border-radius: 20px !important;
-  background: rgba(255, 255, 255, 0.1) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -61,7 +126,7 @@ body::after {
   backdrop-filter: blur(7px);
 }
 
-.App .card .content {
+.Landing .card .content {
   padding: 20px;
   text-align: center;
   transform: translateY(100px);
@@ -69,12 +134,12 @@ body::after {
   transition: 0.5s;
 }
 
-.App .card:hover .content {
+.Landing .card:hover .content {
   transform: translateY(0px);
   opacity: 1;
 }
 
-.App .card .content h2{
+.Landing .card .content h2 {
   position: absolute;
   top: -80px;
   right: 30px;
@@ -83,19 +148,19 @@ body::after {
   pointer-events: none;
 }
 
-.App .card .content h3{
+.Landing .card .content h3 {
   font-size: 1.8em;
   color: #fff;
   z-index: 1;
 }
 
-.App .card .content p{
+.Landing .card .content p {
   font-size: 1em;
   color: #fff;
   font-weight: 300;
 }
 
-.App .card .content a{
+.Landing .card .content a {
   position: relative;
   display: inline-block;
   padding: 8px 20px;
@@ -106,5 +171,27 @@ body::after {
   border-radius: 20px;
   text-decoration: none;
   font-weight: 500;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5)
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/**
+Page transition
+*/
+.fade-appear,
+.fade-enter {
+  opacity: 0;
+}
+.fade-appear-active,
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 200ms linear 150ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 150ms linear;
 }
