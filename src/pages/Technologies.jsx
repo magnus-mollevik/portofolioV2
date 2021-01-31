@@ -4,9 +4,10 @@ import '../App.css';
 
 const Technologies = () => {
     return (
-        <div className="Technologies">
-            <h1>Test</h1>
-        </div>
+        <section className="Technologies">
+           <article className="ContainerText"></article>
+           <article className="ContainerLogos"></article>
+        </section>
     )
 }
 

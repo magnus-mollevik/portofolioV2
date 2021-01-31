@@ -6,11 +6,10 @@ const Landing = () => {
     return (
         <div className="container">
             <div className="Landing">
-                <Card title="01" subTitle="Technologies" content="Nisi laboris pariatur commodo reprehenderit enim qui non irure eu. Officia exercitation est consequat cupidatat voluptate. Velit aute magna sit dolore magna cillum ipsum ipsum ad officia elit velit."></Card>
-                <Card title="02" subTitle="Languages" content="Nisi laboris pariatur commodo reprehenderit enim qui non irure eu. Officia exercitation est consequat cupidatat voluptate. Velit aute magna sit dolore magna cillum ipsum ipsum ad officia elit velit."></Card>
-                <Card title="03" subTitle="Projects" content="Nisi laboris pariatur commodo reprehenderit enim qui non irure eu. Officia exercitation est consequat cupidatat voluptate. Velit aute magna sit dolore magna cillum ipsum ipsum ad officia elit velit."></Card>
-                <Card title="04" subTitle="Skills & Hobbies" content="Nisi laboris pariatur commodo reprehenderit enim qui non irure eu. Officia exercitation est consequat cupidatat voluptate. Velit aute magna sit dolore magna cillum ipsum ipsum ad officia elit velit."></Card>
-                <Card title="05" subTitle="Contact" content="Nisi laboris pariatur commodo reprehenderit enim qui non irure eu. Officia exercitation est consequat cupidatat voluptate. Velit aute magna sit dolore magna cillum ipsum ipsum ad officia elit velit."></Card>
+                <Card title="01" link="/About" subTitle="About" content="Hi my name is Magnus Møllevik, im a computer science student at Østfold University College"></Card>
+                <Card title="02" link="/Technologies" subTitle="Technologies" content="I know a series of technologies and languages, ranging from backend, frontend, cloud computing services and UI design"></Card>
+                <Card title="03" link="/Projects" subTitle="Projects" content="I have created a number of projects from UWP apps in .NET, Nativ Android apps in Android Studio and PWA apps with REACT"></Card>
+                <Card title="04" link="/Contact" subTitle="Contact" content="Feel free to contact me anytime."></Card>
             </div>
         </div>
     )

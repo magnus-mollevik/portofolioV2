@@ -9,6 +9,7 @@ function App() {
       <Router>
       <Routes />
       </Router>
+      <footer><p>© Copr. 2021 Magnus K. Møllevik</p></footer>
      </div>
   );
 }

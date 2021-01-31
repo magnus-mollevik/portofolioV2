@@ -1,8 +1,11 @@
 import '../App.css';
 import React, {useEffect, useRef} from 'react';
 import VanillaTilt from 'vanilla-tilt'
+import ArrowPNG from '../images/upArrow.png';
+import { NavLink } from 'react-router-dom';
 
-const Card = ({title, subTitle, content}) => {
+
+const Card = ({title, subTitle, content, link}) => {
 
     function Tilt(props) {
         const { options, ...rest } = props;
@@ -24,12 +27,13 @@ const Card = ({title, subTitle, content}) => {
 
     return (
         <Tilt options={options} className="card" >
-            <div className="content">
+            <article className="content">
                 <h2>{title}</h2>
                 <h3>{subTitle}</h3>
                 <p>{content}</p>
-                <a href="http://localhost:3000/Landing">Read More</a>
-            </div>
+                <NavLink to={link}>Read More</NavLink>
+            </article>
+            <img src={ArrowPNG} alt="up arrow"/>
         </Tilt>
     )
 }

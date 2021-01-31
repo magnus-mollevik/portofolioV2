@@ -3,11 +3,9 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import Projects from '../pages/Projects.jsx';
 import Contact from '../pages/Contact.jsx';
 import Landing from '../pages/Landing.jsx';
-import Languages from '../pages/Languages.jsx';
-import Skills from '../pages/Skills.jsx';
+import About from '../pages/About.jsx';
 import Technologies from '../pages/Technologies.jsx';
-//import NavBar from '../components/NavBar.jsx';
-import { NavLink } from 'react-router-dom';
+import NavBar from '../components/NavBar.jsx';
 import {
     CSSTransition,
     TransitionGroup,
@@ -17,43 +15,19 @@ import {
 export const Routes = () => {
     return (
         <div>
-            <nav className="navBar">
-                <ul>
-                    <li>
-                        <NavLink activeClassName="active" to="/Landing">Home</NavLink>
-                    </li>
-                    <li>
-                        <NavLink activeClassName="active" to="/Technologies">Technologies</NavLink>
-                    </li>
-                    <li>
-                        <NavLink activeClassName="active" to="/Languages">Languages</NavLink>
-                    </li>
-                    <li>
-                        <NavLink activeClassName="active" to="/Projects">Projects</NavLink>
-                    </li>
-                    <li>
-                        <NavLink activeClassName="active" to="/Skills">Skills & Hobbies</NavLink>
-                    </li>
-                    <li>
-                        <NavLink activeClassName="active" to="/Contact">Contact</NavLink>
-                    </li>
-                </ul>
-            </nav>
+            <NavBar></NavBar>
             <Route render={({location}) =>(
                 <TransitionGroup>
                 <CSSTransition
-                    key={location.key}
-                    timeout={200}
-                    classNames="fade">
+                    key={location.key} timeout={200} classNames="fade">
                     <Switch location={location}>
                         <Route exact path="/Landing" component={Landing}></Route>
                         <Route exact path="/">
-                            <Redirect to="/Landing" />
+                            <Redirect to="/Landing" component={Landing}/>
                         </Route>
                         <Route exact path="/Technologies" component={Technologies}></Route>
-                        <Route exact path="/Languages" component={Languages}></Route>
                         <Route exact path="/Projects" component={Projects}></Route>
-                        <Route exact path="/Skills" component={Skills}></Route>
+                        <Route exact path="/About" component={About}></Route>
                         <Route exact path="/Contact" component={Contact}></Route>
                     </Switch>
                 </CSSTransition>
