@@ -6,6 +6,7 @@ import gamingPNG from '../images/gaming.png';
 import PSPNG from '../images/photoshop.png';
 import XDPNG from '../images/xd.png';
 import skateboardPNG from '../images/skateboard.png';
+import MultiLayerHoverIcon from '../components/MultiLayerHoverIcon.jsx'
 import { NavLink } from 'react-router-dom';
 
 const About = () => {
@@ -16,9 +17,14 @@ const About = () => {
                     <h2>About</h2>
                     <p>Student at Østfold University College, finishing 3 year bachelor spring 2021. Starting Master degree in computer science at NTNU fall 2021.</p>
                 </article>
-                <div className="pictureDiv">
-                    <img className="profilePicture" src={ProfilePicture} alt="profile"></img>
-                    <h1>Magnus K. Møllevik</h1>
+                <div className="imgcard">
+                    <div className="front"><img src={ProfilePicture}/></div>
+                    <div className="back">
+                        <div className="details">
+                            <h2>Magnus K. Møllevik</h2><br/><p>Software Engineer</p>
+                            <div className="social icons"></div>
+                        </div>
+                    </div>
                 </div>
             </section>
             <section className="mainAboutSection">
@@ -31,66 +37,11 @@ const About = () => {
                     <h2>Hobbies and other Skills</h2>
                     <div className="imagesContainer">
                         <ul>
-                            <li>
-                                <div>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span>
-                                        <img src={PSPNG} alt="ps logo"></img>
-                                    </span>
-                                    <p>Photoshop</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span>
-                                        <img src={XDPNG} alt="xd logo"></img>
-                                    </span>
-                                    <p>AdobeXD</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span>
-                                        <img src={gamingPNG} alt="gaming logo"></img>
-                                    </span>
-                                    <p>Gaming</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span>
-                                        <img src={skateboardPNG} alt="skateboard logo"></img>
-                                    </span>
-                                    <p>Skateboard and snowboard</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span>
-                                        <img src={magnusPNG} className="magnusGif" alt="magnus pixelart"></img>
-                                    </span>
-                                    <p>Pixelart lik this character</p>
-                                </div>
-                            </li>
+                            <MultiLayerHoverIcon src={PSPNG} alt="ps logo" text="Photoshop"></MultiLayerHoverIcon>
+                            <MultiLayerHoverIcon src={XDPNG} alt="xd logo" text="Adobe XD"></MultiLayerHoverIcon>
+                            <MultiLayerHoverIcon src={gamingPNG} alt="gaming logo" text="Gaming"></MultiLayerHoverIcon>
+                            <MultiLayerHoverIcon src={skateboardPNG} alt="skateboard logo" text="Skateboard and Snowbaord"></MultiLayerHoverIcon>
+                            <MultiLayerHoverIcon src={magnusPNG} className="magnusGif" alt="magnus pixelart" text="Pixel art like this character"></MultiLayerHoverIcon>
                         </ul>
                     </div>
                 </article>
