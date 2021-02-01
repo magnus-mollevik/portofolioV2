@@ -18,7 +18,7 @@ const About = () => {
                     <p>Student at Østfold University College, finishing 3 year bachelor spring 2021. Starting Master degree in computer science at NTNU fall 2021.</p>
                 </article>
                 <div className="imgcard">
-                    <div className="front"><img src={ProfilePicture}/></div>
+                    <div className="front"><img src={ProfilePicture} alt="profile"/></div>
                     <div className="back">
                         <div className="details">
                             <h2>Magnus K. Møllevik</h2><br/><p>Software Engineer</p>
