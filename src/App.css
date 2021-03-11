@@ -9,6 +9,7 @@ body {
   align-items: center;
   background: #0a1725;
   z-index: -2;
+  font-family: "Poppins", sans-serif;
 }
 
 body::before {
@@ -23,13 +24,6 @@ body::before {
   z-index: -1;
 }
 
-.App {
-  margin: 0px auto;
-  width: 100%;
-  height: 100%;
-  display: grid;
-}
-
 body::after {
   content: "";
   position: absolute;
@@ -42,6 +36,194 @@ body::after {
   z-index: -1;
 }
 
+.App {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transform-style: preserve-3d;
+}
+
+.App.active .bar{
+  transform: rotate(360deg);
+  background-color: transparent;
+}
+
+.App.active .bar:before{
+  transform: translateY(0) rotate(45deg);
+}
+
+.App.active .bar:after{
+  transform: translateY(0) rotate(-45deg);
+}
+
+.main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  transition: 0.5s;
+  position: relative;
+  left: 0;
+  z-index:5;
+  overflow: hidden;
+  transform-origin: left;
+  transform-style: preserve-3d;
+}
+
+.App.active .main{
+  cursor: pointer;
+  animation: main-animation 0.5s ease;
+  transform: perspective(2400px) rotateY(20deg)  scale(0.8);
+}
+
+.App.active .links{
+  transition: 0.5s;
+  opacity: 1;
+}
+
+@keyframes main-animation{
+  from{
+    transform: translate(0);
+  }
+  to{
+    transform: perspective(2400px) rotateY(20deg)  scale(0.8);
+  }
+}
+
+.navBar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  height: 3rem;
+}
+
+.menu{
+  max-width: 72rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2 rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.logo{
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 4rem;
+}
+.logo span{
+  font-weight: 200;
+}
+
+.hamburger-menu{
+  height: 4rem;
+  width: 3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content:flex-end;
+}
+
+.bar{
+  width: 1.9rem;
+  height: 1.5px;
+  border-radius: 2px;
+  background-color: #eee;
+  transition: 0.5s;
+  position: relative;
+}
+
+.bar:before, .bar:after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-color: #eee;
+  transition: 0.5s;
+}
+.bar:before{
+  transform: translateY(-9px);
+}
+.bar:after{
+  transform: translateY(9px);
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.links{
+  transition: 0.5s;
+  opacity: 0;
+  position: absolute;
+  width: 30%;
+  right: 150px;
+  top: 0;
+  height: 100vh;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul{
+  list-style: none;
+}
+
+.links a{
+  text-decoration: none;
+  color: #eee;
+  padding: 0.7rem 0;
+  display:inline-block;
+  font-size: 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.links a:hover {
+  cursor: pointer;
+}
+
+.links .active{
+  color: rgb(59, 168, 252);
+}
+
+footer {
+  z-index: 1;
+  float: right;
+  position: fixed;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  height: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0 20px 0 0;
+  backdrop-filter: blur(7px);
+  color: #fff;
+}
+footer > p {
+  margin: 8px;
+  opacity: 0.7;
+  font-size: 12px;
+}
+
+/*
 .navBar {
   position: relative;
   display: flex;
@@ -88,50 +270,4 @@ body::after {
 .navBar > ul > li > .active {
   color: rgb(37, 161, 255);
 }
-
-.Landing {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  z-index: 1;
-  left: 0;
-  right: 0;
-  animation: fadein 0.5s;
-  -moz-animation: fadein 0.5s; /* Firefox */
-  -webkit-animation: fadein 0.5s; /* Safari and Chrome */
-  -o-animation: fadein 0.5s; /* Opera */
-}
-
-
-.container {
-  position: absolute;
-  left: 0;
-  right: 0;
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-footer {
-  z-index: 1;
-  float: right;
-  position: fixed;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-  height: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 0 20px 0 0;
-  backdrop-filter: blur(7px);
-  color: #fff;
-}
-footer > p {
-  margin: 8px;
-  opacity: 0.7;
-  font-size: 12px;
-}
-
+*/

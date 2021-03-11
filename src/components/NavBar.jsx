@@ -1,10 +1,30 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import '../App.css';
 
-const NavBar = () => {
+const NavBar = ({ AppClassName, setAppClassName }) => {
+
+    const hamburgerClick = () => {
+        if (AppClassName === "App active") {
+            setAppClassName("App")
+        }
+        else {
+            setAppClassName("App active")
+        }
+    }
+
     return (
-        <nav className="navBar">
+        <div className="navBar">
+            <div className="menu">
+                <h3 className="logo">Magnus<span>Møllevik</span></h3>
+                <div className="hamburger-menu" onClick={hamburgerClick}>
+                    <div className="bar"></div>
+                </div>
+            </div>
+        </div>
+    )
+}
+/*
+<nav className="navBar">
             <ul>
                 <li>
                     <NavLink activeClassName="active" to="/Contact">Contact</NavLink>
@@ -23,7 +43,5 @@ const NavBar = () => {
                 </li>
             </ul>
         </nav>
-    )
-}
-
+         */
 export default NavBar;

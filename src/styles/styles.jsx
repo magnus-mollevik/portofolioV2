@@ -1,31 +1,48 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+
+export const StyledLanding = styled.section`
+  min-height: 90vh;
+  max-width: 85vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  animation: fadein 0.5s;
+  -moz-animation: fadein 0.5s; /* Firefox */
+  -webkit-animation: fadein 0.5s; /* Safari and Chrome */
+  -o-animation: fadein 0.5s; /* Opera */
+`;
 
 export const GlassCard = styled.div`
-    >div{
-      position: relative;
-      margin: 30px !important;
-      width: 280px !important;
-      height: 400px !important;
-      padding: 0 !important;
-      box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5) !important;
-      border-radius: 20px !important;
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(7px);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      border-left: 1px solid rgba(255, 255, 255, 0.1);
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      :hover>img{
-        top: -30px;
-        transition: top 80ms linear 120ms;
+  > div {
+    position: relative;
+    margin: 30px !important;
+    width: 280px !important;
+    height: 400px !important;
+    padding: 0 !important;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5) !important;
+    border-radius: 20px !important;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(7px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    :hover > img {
+      top: -30px;
+      transition: top 80ms linear 120ms;
     }
-    :hover>article{
+    :hover > article {
       transform: translateY(0px);
       opacity: 1;
     }
-    >img{
+    > img {
       position: absolute;
       display: flex;
       text-align: center;
@@ -36,15 +53,15 @@ export const GlassCard = styled.div`
       border-radius: 20px;
       margin-top: 5px;
       transition: top 80ms linear 120ms;
-      }
-    >article{
+    }
+    > article {
       padding: 20px;
       text-align: center;
       transform: translateY(100px);
       opacity: 0;
       transition: 0.5s;
-      
-      >h2{
+
+      > h2 {
         position: absolute;
         top: -80px;
         right: 30px;
@@ -52,17 +69,17 @@ export const GlassCard = styled.div`
         color: rgba(255, 255, 255, 0.05);
         pointer-events: none;
       }
-      >h3{
+      > h3 {
         font-size: 1.8em;
         color: #fff;
         z-index: 1;
       }
-      >p{
+      > p {
         font-size: 1em;
         color: #fff;
         font-weight: 300;
       }
-      >a{
+      > a {
         position: relative;
         display: inline-block;
         padding: 8px 20px;
@@ -80,89 +97,91 @@ export const GlassCard = styled.div`
 `;
 
 export const StyledAbout = styled.section`
-  min-height: 90vh;
-  max-width: 85vw;
-  margin: 0 auto;
-  border-radius:  0  0 20px 20px;
-  border-left: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(7px);
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 0px solid rgba(255, 255, 255, 0.3);
   animation: fadein 0.5s;
   -moz-animation: fadein 0.5s; /* Firefox */
   -webkit-animation: fadein 0.5s; /* Safari and Chrome */
   -o-animation: fadein 0.5s; /* Opera */
 
-@keyframes fadein {
-  from {
-    top:-100px;
-      opacity:0;
+  @keyframes fadein {
+    from {
+      top: -100px;
+      opacity: 0;
+    }
+    to {
+      top: 0;
+      opacity: 1;
+    }
   }
-  to {
-    top:0;
-      opacity:1;
+  @-moz-keyframes fadein {
+    /* Firefox */
+    from {
+      top: -100px;
+      opacity: 0;
+    }
+    to {
+      top: 0;
+      opacity: 1;
+    }
   }
-}
-@-moz-keyframes fadein { /* Firefox */
-  from {
-    top:-100px;
-      opacity:0;
+  @-webkit-keyframes fadein {
+    /* Safari and Chrome */
+    from {
+      top: -100px;
+      opacity: 0;
+    }
+    to {
+      top: 0;
+      opacity: 1;
+    }
   }
-  to {
-    top:0;
-      opacity:1;
+  @-o-keyframes fadein {
+    /* Opera */
+    from {
+      top: -100px;
+      opacity: 0;
+    }
+    to {
+      top: 0;
+      opacity: 1;
+    }
   }
-}
-@-webkit-keyframes fadein { /* Safari and Chrome */
-  from {
-    top:-100px;
-      opacity:0;
-  }
-  to {
-    top:0;
-      opacity:1;
-  }
-}
-@-o-keyframes fadein { /* Opera */
-  from {
-    top:-100px;
-      opacity:0;
-  }
-  to {
-    top:0;
-      opacity:1;
-  }
-}
-  >.introContainer{
-    min-width:100%;
+  > .introContainer {
+    margin-top: 100px;
+    min-width: 100%;
+    max-height: 90%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
   }
-  section>.quoteArticle{
+  section > .quoteArticle {
     max-width: 400px;
     max-height: 200px;
-    >h2{
+    > h2 {
       text-align: center;
       margin-left: 10px;
       font-size: 5em;
       color: rgba(255, 255, 255, 0.514);
     }
-    >p{
+    > p {
       text-align: center;
       margin: 20px;
       max-width: 400px;
       color: white;
     }
   }
-  >.introContainer>.imgcard{
+  > .introContainer > .imgcard {
     min-width: 300px;
     min-height: 350px;
     transform-style: preserve-3d;
     perspective: 600px;
     transition: 1s;
     margin-top: 20px;
-    >.front {
+    > .front {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -171,111 +190,117 @@ export const StyledAbout = styled.section`
       backface-visibility: hidden;
       transform: rotateX(0deg);
       transition: 1s;
-      background: linear-gradient(rgb(201, 0, 201, 0.5), rgb(59, 168, 252, 0.5));
+      background: linear-gradient(
+        rgb(201, 0, 201, 0.5),
+        rgb(59, 168, 252, 0.5)
+      );
       border-radius: 10px;
-      >img{
+      > img {
         position: absolute;
         right: 0;
-        width:200px;
+        width: 200px;
         filter: grayscale(100%);
         opacity: 0.8;
         bottom: 5px;
         border-radius: 20px;
       }
     }
-    >.back{
+    > .back {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      opacity:0.9;
+      opacity: 0.9;
       border-left: 1px solid rgba(255, 255, 255, 0.13);
       box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-      background: linear-gradient(rgb(59, 168, 252, 0.5), rgb(201, 0, 201, 0.5));
+      background: linear-gradient(
+        rgb(59, 168, 252, 0.5),
+        rgb(201, 0, 201, 0.5)
+      );
       backface-visibility: hidden;
       transform: rotateX(180deg);
       transition: 1s;
       border-radius: 10px;
-      >.details{
+      > .details {
         position: absolute;
         top: 10%;
         left: 0;
         width: 100%;
         color: white;
         text-align: center;
-        >h2{
+        > h2 {
           font-size: 3em;
           color: rgba(255, 255, 255, 0.5);
         }
-        >p{
+        > p {
           opacity: 0.6;
         }
       }
     }
-    :hover>.front{
+    :hover > .front {
       transform: rotateX(-180deg);
     }
-    :hover>.back{
+    :hover > .back {
       transform: rotateX(0deg);
     }
   }
-  .introContainer>.quoteArticle{
-    margin-bottom:20px;
+  .introContainer > .quoteArticle {
+    margin-bottom: 20px;
   }
-  .mainAboutSection{
+  .mainAboutSection {
     display: flex;
     flex-direction: column;
     align-items: center;
-    >.TechAndLanguages{
+    > .TechAndLanguages {
       display: flex;
       flex-direction: column;
       text-align: center;
       margin: 0 0 40px 0;
-      >h2{
+      > h2 {
         font-size: 3em;
         color: rgba(255, 255, 255, 0.514);
       }
-      >p{
+      > p {
         margin-top: 40px;
         color: white;
         max-width: 400px;
       }
-      >a{
+      > a {
         color: white;
       }
     }
-    >.HobbiesAndOtherSkills{
+    > .HobbiesAndOtherSkills {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      >h2{
+      > h2 {
         color: rgba(255, 255, 255, 0.514);
         font-size: 3em;
       }
-      >.imagesContainer{
-        min-height:200px;
+      > .imagesContainer {
+        min-height: 200px;
         display: flex;
         align-items: center;
         justify-content: center;
-        ul{
+        ul {
           position: relative;
           margin: 0;
           padding: 0;
           display: flex;
           flex-wrap: wrap;
-          >li>div>span>img{
+          > li > div > span > img {
             background: rgb(4, 35, 59);
           }
-          li{
+          li {
             position: relative;
             list-style: none;
             width: 70px;
             height: 70px;
             margin: 40px 40px;
             transform: rotate(-30deg) skew(25deg);
-            span{
+            span {
               position: absolute;
               border-radius: 20px;
               top: 0;
@@ -288,73 +313,68 @@ export const StyledAbout = styled.section`
               align-items: center;
               justify-content: center;
             }
-            div{
-              p{
-                opacity:0;
+            div {
+              p {
+                opacity: 0;
                 transition: 0.3s;
                 position: absolute;
-                color:white;
+                color: white;
                 bottom: 0px;
-                left:0px;
+                left: 0px;
               }
-
             }
-            :hover div{
-              p{
+            :hover div {
+              p {
                 position: absolute;
-                color:white;
+                color: white;
                 bottom: -20px;
                 opacity: 1;
-                left:-10px;
-               }
+                left: -10px;
+              }
             }
             :nth-child(4) :hover {
-              p{
+              p {
                 position: absolute;
-                color:white;
+                color: white;
                 bottom: -63px;
-                left:-10px;
-
+                left: -10px;
               }
             }
             :nth-child(5) :hover {
-              p{
+              p {
                 position: absolute;
-                color:white;
+                color: white;
                 bottom: -63px;
-                left:-10px;
-
+                left: -10px;
               }
             }
-            :hover span:nth-child(5){
+            :hover span:nth-child(5) {
               transform: translate(40px, -40px);
               opacity: 1;
             }
-            :hover span:nth-child(4){
+            :hover span:nth-child(4) {
               transform: translate(30px, -30px);
               opacity: 0.8;
             }
-            :hover span:nth-child(3){
+            :hover span:nth-child(3) {
               transform: translate(20px, -20px);
               opacity: 0.6;
             }
-            :hover span:nth-child(2){
+            :hover span:nth-child(2) {
               transform: translate(10px, -10px);
               opacity: 0.4;
             }
-            :hover span:nth-child(1){
+            :hover span:nth-child(1) {
               transform: translate(0px, 0px);
               opacity: 0.2;
             }
-            img{
-              width:75px;
+            img {
+              width: 75px;
               border-radius: 14px;
             }
           }
-        } 
+        }
       }
     }
-  }    
-  
+  }
 `;
-
