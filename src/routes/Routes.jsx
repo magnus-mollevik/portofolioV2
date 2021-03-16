@@ -11,10 +11,25 @@ import '../App.css';
 
 export const Routes = ({ AppClassName, setAppClassName }) => {
 
+    const menuElementClick = () => {
+        if (AppClassName === "App active") {
+            setAppClassName("App")
+        }
+        else {
+            setAppClassName("App active")
+        }
+    }
+
+    const mainClick = () => {
+        if (AppClassName === "App active") {
+            setAppClassName("App")
+        }
+    }
+
     return (
         <>
             <NavBar AppClassName={AppClassName} setAppClassName={setAppClassName}></NavBar>
-            <div className="main">
+            <div className="main" onClick={mainClick}>
                 <Switch>
                     <Route exact path="/Landing" component={Landing}></Route>
                     <Route exact path="/">
@@ -29,19 +44,19 @@ export const Routes = ({ AppClassName, setAppClassName }) => {
             <nav className="links">
                 <ul>
                     <li>
-                        <NavLink activeClassName="active" to="/Landing">Home</NavLink>
+                        <NavLink activeClassName="active" to="/Landing" onClick={menuElementClick}>Home</NavLink>
                     </li>
                     <li>
-                        <NavLink activeClassName="active" to="/Projects">Projects</NavLink>
+                        <NavLink activeClassName="active" to="/Projects" onClick={menuElementClick}>Projects</NavLink>
                     </li>
                     <li>
-                        <NavLink activeClassName="active" to="/About">About</NavLink>
+                        <NavLink activeClassName="active" to="/About" onClick={menuElementClick}>About</NavLink>
                     </li>
                     <li>
-                        <NavLink activeClassName="active" to="/Technologies">Technologies</NavLink>
+                        <NavLink activeClassName="active" to="/Technologies" onClick={menuElementClick}>Technologies</NavLink>
                     </li>
                     <li>
-                        <NavLink activeClassName="active" to="/Contact">Contact</NavLink>
+                        <NavLink activeClassName="active" to="/Contact" onClick={menuElementClick}>Contact</NavLink>
                     </li>
                 </ul>
             </nav>

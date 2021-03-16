@@ -47,9 +47,9 @@ export const GlassCard = styled.div`
       display: flex;
       text-align: center;
       justify-content: center;
-      top: 0;
-      width: 20px;
-      height: 20px;
+      top: 30px;
+      width: 25px;
+      height: 25px;
       border-radius: 20px;
       margin-top: 5px;
       transition: top 80ms linear 120ms;
@@ -151,12 +151,11 @@ export const StyledAbout = styled.section`
   }
   > .introContainer {
     margin-top: 100px;
-    min-width: 100%;
-    max-height: 90%;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   section > .quoteArticle {
     max-width: 400px;
@@ -181,6 +180,7 @@ export const StyledAbout = styled.section`
     perspective: 600px;
     transition: 1s;
     margin-top: 20px;
+    margin-bottom: 50px;
     > .front {
       position: absolute;
       width: 100%;
@@ -284,12 +284,15 @@ export const StyledAbout = styled.section`
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-bottom: 40px;
         ul {
           position: relative;
           margin: 0;
           padding: 0;
           display: flex;
           flex-wrap: wrap;
+          align-items: center;
+        justify-content: center;
           > li > div > span > img {
             background: rgb(4, 35, 59);
           }

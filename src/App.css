@@ -59,7 +59,7 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   transition: 0.5s;
   position: relative;
@@ -68,13 +68,27 @@ body::after {
   overflow: hidden;
   transform-origin: left;
   transform-style: preserve-3d;
+  overflow: auto;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
+.main::-webkit-scrollbar {
+  display: none;
+}
 
 .App.active .main{
   cursor: pointer;
   animation: main-animation 0.5s ease;
   transform: perspective(2400px) rotateY(20deg)  scale(0.8);
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  border-right: 0;
+  border-bottom: 0;
+  margin-left: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(7px);
+  background: rgba(119, 119, 119, 0.08);
+
 
 }
 @media only screen and (max-width: 960px){
@@ -186,7 +200,8 @@ body::after {
   width: 30%;
   right: 150px;
   top: 0;
-  height: 100vh;
+  margin-top: 10vh;
+  height: 70vh;
   z-index: 2;
   display: flex;
   justify-content: center;

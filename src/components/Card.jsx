@@ -27,8 +27,8 @@ const Card = ({ title, subTitle, content, link }) => {
   };
 
   return (
-    <GlassCard>
-      <Tilt options={options} className="card" >
+    <GlassCard className="card">
+      <Tilt options={options}  >
         <article className="content">
           <h2>{title}</h2>
           <h3>{subTitle}</h3>

@@ -18,7 +18,7 @@ const About = () => {
 			<section className="introContainer">
 				<article className="quoteArticle">
 					<h2>About</h2>
-					<p>Student at Østfold University College, finishing 3 year bachelor spring 2021. Starting Master degree in computer science at NTNU fall 2021.</p>
+					<p>Student at Østfold University College, finishing 3 year bachelor spring 2021. Starting Master degree in informatics at NTNU fall 2021.</p>
 				</article>
 				<div className="imgcard">
 					<div className="front"><img src={ProfilePicture} alt="profile" /></div>
