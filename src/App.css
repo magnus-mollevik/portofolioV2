@@ -55,7 +55,6 @@ body::after {
 .App.active .bar:after{
   transform: translateY(0) rotate(-45deg);
 }
-
 .main{
   display: flex;
   align-items: center;
@@ -71,15 +70,26 @@ body::after {
   transform-style: preserve-3d;
 }
 
+
 .App.active .main{
   cursor: pointer;
   animation: main-animation 0.5s ease;
   transform: perspective(2400px) rotateY(20deg)  scale(0.8);
+
+}
+@media only screen and (max-width: 960px){
+ .App.active .main {
+    opacity: 0;
+  }
+  .main{
+    margin-top: 30px;
+  }
 }
 
 .App.active .links{
   transition: 0.5s;
   opacity: 1;
+  z-index: 10;
 }
 
 @keyframes main-animation{
@@ -117,6 +127,7 @@ body::after {
   text-transform: uppercase;
   letter-spacing: 2px;
   line-height: 4rem;
+  margin: 0 10px;
 }
 .logo span{
   font-weight: 200;
@@ -129,6 +140,7 @@ body::after {
   display: flex;
   align-items: center;
   justify-content:flex-end;
+  margin: 0 10px;
 }
 
 .bar{
@@ -170,7 +182,7 @@ body::after {
 .links{
   transition: 0.5s;
   opacity: 0;
-  position: absolute;
+  position: fixed;
   width: 30%;
   right: 150px;
   top: 0;
@@ -222,52 +234,3 @@ footer > p {
   opacity: 0.7;
   font-size: 12px;
 }
-
-/*
-.navBar {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  z-index: 1;
-  top: 0;
-  background: rgba(255, 255, 255, 0.06);
-  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-  max-width: 100%;
-  min-height: 50px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  border-left: 3px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(7px);
-  border-radius: 0px 0px 30px 30px;
-}
-
-.navBar > ul {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  flex-direction: row-reverse;
-  flex-grow: inherit;
-}
-
-.navBar > ul > li > a {
-  color: #fff;
-  margin: 10px;
-  font-size: 1em;
-  font-weight: 500;
-  text-decoration: none;
-}
-.navBar > ul > li {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 110px;
-}
-
-.navBar > ul > li > .active {
-  color: rgb(37, 161, 255);
-}
-*/

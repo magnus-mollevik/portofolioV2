@@ -29,19 +29,19 @@ export const Routes = ({ AppClassName, setAppClassName }) => {
             <nav className="links">
                 <ul>
                     <li>
-                        <NavLink activeClassName="active" to="/Contact">Contact</NavLink>
+                        <NavLink activeClassName="active" to="/Landing">Home</NavLink>
                     </li>
                     <li>
                         <NavLink activeClassName="active" to="/Projects">Projects</NavLink>
                     </li>
                     <li>
-                        <NavLink activeClassName="active" to="/Technologies">Technologies</NavLink>
-                    </li>
-                    <li>
                         <NavLink activeClassName="active" to="/About">About</NavLink>
                     </li>
                     <li>
-                        <NavLink activeClassName="active" to="/Landing">Home</NavLink>
+                        <NavLink activeClassName="active" to="/Technologies">Technologies</NavLink>
+                    </li>
+                    <li>
+                        <NavLink activeClassName="active" to="/Contact">Contact</NavLink>
                     </li>
                 </ul>
             </nav>

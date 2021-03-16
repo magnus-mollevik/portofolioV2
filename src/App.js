@@ -11,9 +11,8 @@ const [AppClassName, setAppClassName] = useState("App")
       <Router>
       <Routes AppClassName={AppClassName} setAppClassName={setAppClassName}/>
       </Router>
-      <footer><p>© Copr. 2021 Magnus K. Møllevik</p></footer>
      </div>
   );
 }
-
+// <footer><p>© Copr. 2021 Magnus K. Møllevik</p></footer>
 export default App;
