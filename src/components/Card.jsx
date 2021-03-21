@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import VanillaTilt from 'vanilla-tilt'
 import ArrowPNG from '../images/upArrow.png';
 import { NavLink } from 'react-router-dom';
-import { GlassCard } from '../styles/styles.jsx'
+import { GlassCard } from '../styledComponents/Styles.jsx'
 
 
 const Card = ({ title, subTitle, content, link }) => {

@@ -1,20 +1,21 @@
 import styled from "styled-components";
 
 export const StyledLanding = styled.section`
-  min-height: 90vh;
-  max-width: 85vw;
-  margin: 0 auto;
+  position: absolute;
+  top: 24%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   z-index: 1;
-  left: 0;
-  right: 0;
   animation: fadein 0.5s;
   -moz-animation: fadein 0.5s; /* Firefox */
   -webkit-animation: fadein 0.5s; /* Safari and Chrome */
   -o-animation: fadein 0.5s; /* Opera */
+
+  @media only screen and (max-width: 980px) {
+  top: 14%;
+  }
 `;
 
 export const GlassCard = styled.div`
@@ -27,7 +28,7 @@ export const GlassCard = styled.div`
     box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5) !important;
     border-radius: 20px !important;
     background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(7px);
+    //backdrop-filter: blur(7px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     border-left: 1px solid rgba(255, 255, 255, 0.1);
     overflow: hidden;
@@ -96,6 +97,72 @@ export const GlassCard = styled.div`
   }
 `;
 
+export const StyledProject = styled.section`
+  margin-top: 100px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 1;
+  .projectsIntro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    >h2 {
+      text-align: center;
+      font-size: 4em;
+      color: rgba(255, 255, 255, 0.514);
+    }
+    >p {
+      text-align: center;
+      color: white;
+      max-width: 400px;
+      margin: 20px;
+    }
+  }
+  .projectsContainer {
+    @media only screen and (min-width: 680px){
+      width: 70vw;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+      >article{
+        margin: 20px;
+        color: white;
+        text-align: center;
+        min-width: 300px;
+        max-width: 300px;
+        min-height: 340px;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+        >h3{
+          margin: 5px;
+          margin-bottom: 10px;
+          color: #cccccc;
+        }
+        >p{
+          height: 90px;
+        }
+        >img{
+          position: relative;
+          margin-top: 10px;
+          max-height: 150px;
+          border-radius: 10px;
+          bottom: 0px;
+        }
+      }
+  }
+
+
+`;
+
 export const StyledAbout = styled.section`
   width: 100%;
   height: 100%;
@@ -108,44 +175,36 @@ export const StyledAbout = styled.section`
 
   @keyframes fadein {
     from {
-      top: -100px;
       opacity: 0;
     }
     to {
-      top: 0;
       opacity: 1;
     }
   }
   @-moz-keyframes fadein {
     /* Firefox */
     from {
-      top: -100px;
       opacity: 0;
     }
     to {
-      top: 0;
       opacity: 1;
     }
   }
   @-webkit-keyframes fadein {
     /* Safari and Chrome */
     from {
-      top: -100px;
       opacity: 0;
     }
     to {
-      top: 0;
       opacity: 1;
     }
   }
   @-o-keyframes fadein {
     /* Opera */
     from {
-      top: -100px;
       opacity: 0;
     }
     to {
-      top: 0;
       opacity: 1;
     }
   }
@@ -162,8 +221,7 @@ export const StyledAbout = styled.section`
     max-height: 200px;
     > h2 {
       text-align: center;
-      margin-left: 10px;
-      font-size: 5em;
+      font-size: 4em;
       color: rgba(255, 255, 255, 0.514);
     }
     > p {

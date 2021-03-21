@@ -1,6 +1,6 @@
 import React from 'react';
 import ProfilePicture from '../images/profilPicTransparent.png';
-import { StyledAbout } from '../styles/styles.jsx';
+import { StyledAbout } from '../styledComponents/Styles.jsx';
 import magnusPNG from '../images/magnusPixel.gif';
 import gamingPNG from '../images/gaming.png';
 import PSPNG from '../images/photoshop.png';
