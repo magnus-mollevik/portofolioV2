@@ -439,3 +439,5 @@ export const StyledAbout = styled.section`
     }
   }
 `;
+
+
