@@ -12,9 +12,9 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import { NavLink } from 'react-router-dom';
 
 const About = () => {
+
 	return (
 		<StyledAbout className="About">
-
 			<section className="introContainer">
 				<article className="quoteArticle">
 					<h2>About</h2>

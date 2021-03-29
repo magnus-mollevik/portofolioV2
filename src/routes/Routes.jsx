@@ -8,8 +8,12 @@ import Technologies from '../pages/Technologies.jsx';
 import NavBar from '../components/NavBar.jsx';
 import { NavLink } from 'react-router-dom';
 import '../App.css';
+import { useEffect, useRef } from 'react';
+import { useHistory } from "react-router-dom";
 
 export const Routes = ({ AppClassName, setAppClassName }) => {
+    const ref = useRef(null);
+    const history = useHistory();
 
     const menuElementClick = () => {
         if (AppClassName === "App active") {
@@ -26,10 +30,19 @@ export const Routes = ({ AppClassName, setAppClassName }) => {
         }
     }
 
+    useEffect(() => {
+        const unlisten = history.listen(() => {
+            ref.current.scrollTo(0, 0);
+        });
+        return () => {
+          unlisten();
+        }
+      }, [history]);
+
     return (
         <>
             <NavBar AppClassName={AppClassName} setAppClassName={setAppClassName}></NavBar>
-            <div className="main" onClick={mainClick}>
+            <div className="main" onClick={mainClick} ref={ref}>
                 <Switch>
                     <Route exact path="/Landing" component={Landing}></Route>
                     <Route exact path="/">

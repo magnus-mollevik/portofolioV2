@@ -14,5 +14,4 @@ const [AppClassName, setAppClassName] = useState("App")
      </div>
   );
 }
-// <footer><p>© Copr. 2021 Magnus K. Møllevik</p></footer>
 export default App;

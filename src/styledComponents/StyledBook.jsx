@@ -7,6 +7,7 @@ export const StyledBook = styled.div`
     align-items: center;
     flex-wrap: wrap;
     text-align: center;
+    margin: 40px;
     ul{
         list-style: none
     }
@@ -47,6 +48,7 @@ export const StyledBook = styled.div`
         color: rgba(255, 255, 255, 0.9);
         margin-top: 2px;
         margin-left: 5px;
+        font-size: small;
     }
     .writer i{
         color: rgba(241, 232, 232, 0.8);
@@ -54,7 +56,7 @@ export const StyledBook = styled.div`
     .copyright{
         float: left;
         padding-top: 5px;
-        color: rgba(202, 194, 194, 0.6);
+        color: rgba(241, 232, 232, 0.8);
         font-size: small;
         margin-left: 5px;
     }
@@ -64,8 +66,9 @@ export const StyledBook = styled.div`
     }
     .back li{
         background: linear-gradient(rgb(201, 0, 201), rgb(59, 168, 252));
-        border-radius: 10px;
-        width: 97.5%!important;   
+        border-radius: 10px;  
+        right: 7px;
+        background: white;
     }
     .page>li{
         background: linear-gradient(left, #e1ddd8 0%, #fffbf6 100%);
@@ -83,7 +86,6 @@ export const StyledBook = styled.div`
     }
     .back{
         transform: rotateY(-15deg) translateZ(-8px);
-
     }
     .page li:nth-child(1){
         transform: rotateY(-28deg);
@@ -167,6 +169,26 @@ export const StyledBook = styled.div`
     }
     .btn{
         display: inline-block;
-        text-decoration: none;
+        background-color: #2c3e50;
+        color: white;
+        padding: 10px;
+        width: 110px;
+        height: 40px;
+        border-radius: 5px;
+        bottom: 0px;
+    }
+
+    .btn:hover{
+        background-color: #3b4c5c;
+        text-decoration: underline;
+    }
+
+    .description{
+        text-align: left;
+        margin: 10px;
+    }
+    .insideHeading{
+        margin-top: 10px;
+        font-size: large;
     }
 `;
